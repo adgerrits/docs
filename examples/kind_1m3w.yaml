@@ -1,0 +1,29 @@
+#
+# 1x master, 3x worker
+# Ref. https://kind.sigs.k8s.io/docs/user/quick-start/#setting-kubernetes-version
+#
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+kubeadmConfigPatches: # Standard patches conform Kind documentation
+- |
+  apiVersion: kubelet.config.k8s.io/v1beta1
+  kind: KubeletConfiguration
+  evictionHard:
+    nodefs.available: "0%"
+kubeadmConfigPatchesJSON6902:
+- group: kubeadm.k8s.io
+  version: v1beta2
+  kind: ClusterConfiguration
+  patch: |
+    - op: add
+      path: /apiServer/certSANs/-
+      value: my-hostname
+nodes:
+- role: control-plane # 1x master
+  image: kindest/node:v1.19.7@sha256:a70639454e97a4b733f9d9b67e12c01f6b0297449d5b9cbbef87473458e26dca # https://github.com/kubernetes-sigs/kind/releases
+- role: worker # 3x worker
+  image: kindest/node:v1.19.7@sha256:a70639454e97a4b733f9d9b67e12c01f6b0297449d5b9cbbef87473458e26dca
+- role: worker
+  image: kindest/node:v1.19.7@sha256:a70639454e97a4b733f9d9b67e12c01f6b0297449d5b9cbbef87473458e26dca
+- role: worker
+  image: kindest/node:v1.19.7@sha256:a70639454e97a4b733f9d9b67e12c01f6b0297449d5b9cbbef87473458e26dca
