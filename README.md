@@ -1,8 +1,8 @@
 # Welkom bij Project Notificatieservices
 
-Project Notificatieservices wil het mogelijk maken dat Nederlandse overheidsorganisaties vaker en beter gebeurtenisgedreven ('event driven') werken. Daarvoor is onder andere standaardisatie op een aantal nodig op een aantal aspecten. Project Notificatieservices richt zich primair op de ontwikkeling van een gestandaardiseerd berichtformaat voor geautomatiseerd uitwisselen van informatie over plaatsgevonden gebeurtenissen ('notificaties'). Er worden ook afspraken gemaakt aspecten zoals de interactie tussen betrokken applicaties (bijv. voor geautomatiseerd abonneren op notificaties) en er worden aanbevelingen gedaan over zaken waar in de praktijk rekening mee moet worden gehouden.  
+Project Notificatieservices wil het mogelijk maken dat Nederlandse overheidsorganisaties vaker en beter gebeurtenisgedreven ('event driven') werken. Daarvoor is op een aantal aspecten standaardisatie nodig. Project Notificatieservices richt zich primair op de ontwikkeling van een standaard berichtformaat voor geautomatiseerd uitwisselen van informatie over plaatsgevonden gebeurtenissen ('notificaties'). Er worden ook afspraken gemaakt over aspecten zoals de interactie tussen betrokken applicaties (bijv. voor geautomatiseerd abonneren op notificaties) en er worden aanbevelingen gedaan over zaken waar in de praktijk rekening mee moet worden gehouden.  
 
-Het project een eerste stap is op weg naar meer en beter gebeurtenisgedreven werken binnen de overheid. Vergelijkbaar met hoe dit bij de Nederlandse API strategie verloopt zal dit meerdere jaren vergen en is samenwerking in de vorm van een community nodig. Als voorbereiding daarop wordt nu al samengewerkt met een community waarin zowel overheidsorganisaties als marktpartijen zijn vertegenwoordigd.
+Het project een eerste stap is op weg naar effectief gebeurtenisgedreven werken binnen de overheid. Vergelijkbaar met hoe dit bij de Nederlandse API strategie verloopt zal dit meerdere jaren vergen en is samenwerking in de vorm van een community nodig. Als voorbereiding daarop wordt nu al samengewerkt met een community waarin zowel overheidsorganisaties als marktpartijen zijn vertegenwoordigd.
 
 Doe mee en [ga aan de slag](./aan-de-slag.md) !
 
@@ -16,15 +16,13 @@ Doe mee en [ga aan de slag](./aan-de-slag.md) !
 
 ## Visie
 
-*Een overheid die waar nodig gebeurtenisgedreven werkt en daarmee haar dienstverlening verbetert.*
+*Een overheid die ook gebeurtenisgedreven werkt en daarmee snellere en betere dienstverlening kan leveren.*
 
 ## Strategie
 
-We sluiten zoveel mogelijk aan bij wat internationaal al op dit vlak is afgesproken en in ontwikkeling is. 
+We sluiten zoveel mogelijk aan bij wat wereldwijd gebruikelijk is (bijv. toepassing van het [publish-subscribe patroon](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)) en wat er aan standaarden vastgesteld of in ontwikkeling is. We gebruiken de [CloudEvents](https://cloudevents.io/) berichtspecificatie ('A specification for describing event data in a common way') als uitgangspunt voor het te ontwikkelen standaard berichtformaat voor notificaties. Aanvullend maken we afspraken over hoe we de CloudEvents berichtstandaard binnen onze overheidscontext toepassen. De resultaten hiervan zijn gebundeld op de pagina: [Berichtstandaard voor notificeren binnen de overheid](./notificatie-berichtformaat.md).
 
-We gebruiken de [CloudEvents](https://cloudevents.io/) berichtspecificatie ('A specification for describing event data in a common way') als uitgangspunt voor het gestandaardiseerde berichtformaat voor notificaties. We maken aanvullend afspraken over hoe we de CloudEvents berichtstandaard binnen onze overheidscontext toepassen. De resultaten hiervan zijn gebundeld op de pagina: [Berichtstandaard voor notificeren binnen de overheid](./berichtstandaard.md). 
-
-Voor het maken van afspraken over hoe we in de praktijk gebeurtenisgedreven werken maken we gebruik van bestaande specificaties en beschrijven we hoe we die binnen onze context toepassen. In gevallen waarbij afsrpaken worden gemaakt over hoe de interactie tussen actoren verloopt gebruiken we ook wel over een 'patroon'. 
+Voor het maken van afspraken over hoe we in de praktijk gebeurtenisgedreven werken gebruiken we ook andere specificaties. Bij ieder van de genoemde specificaties is beschreven wat we daarvan overnemen en hoe we er binnen onze context mee gaan werken. 
 
 | Specificaties 	| Toepassing |
 |---|---|
@@ -33,8 +31,8 @@ Voor het maken van afspraken over hoe we in de praktijk gebeurtenisgedreven werk
 | CloudEvents specificaties voor abonneren op notificaties en het kunnen filteren daarvan | [Abonneren en filteren](./abonneren-en-filteren)|
 | CloudEvents specificatie voor het ('push')patroon waarbij notificaties op initiatief van een aanbieder worden verstrekt aan geabonneerde afnemers ||
 | CloudEvents specificatie voor publiceren van informatie over beschikbare soorten gebeurtenissen | [Publiceren soorten gebeurtenissen](./publiceren-gebeurtenistypes) |
-| AsyncAPI specificatie voor documenteren van API's bij gebruik van het Publish-Subcribe patroon | [async-api-gebruik](./asyncapi-gebruik)|
-| Open standaarden zoals benoemd door het Forum Standaardisatie| [Open standaarden](./open-standaarden)|
+| AsyncAPI specificatie voor documenteren van API's bij gebruik van het Publish-Subcribe patroon | [AsyncAPI gebruik](./asyncapi-gebruik.md)|
+| Open standaarden zoals benoemd door het Forum Standaardisatie| [Open standaarden](./open-standaarden.md)|
 
 We gebruiken bovenstaande specificaties om een aantal aanbevelingen te doen. Op termijn kunnen ze onderdeel worden van de familiie van standaarden voor gebeurtenisgedreven werken binnen de Nederlandse overheid.   
 
@@ -71,30 +69,14 @@ In de praktijk kunnen organisaties en applicaties een of meerdere rollen vervull
 
 ## Scope
 
-Gebeurtenissen doen zich in vele vormen en binnen vele contexten voor. Bij het ontwikkelen van de berichtenstandaard is de volgende scopeafbakening gehanteerd:
-
-| Binnen scope 	| Buiten scope |
-| --- | --- |
-| Van overheid naar overheid (G2G) | Notificeren van mensen (G2C), bedrijven (G2B, B2B) |
-| Notificeren door en van applicaties (M2M) | Notificeren bij microservices , serverless functies, Internet of Things  |
-| 1 op N notificeren | 1 op 1 notificeren |
-| 1-weg communicatie - Fire and forget | 2-weg communicatie Procesorkestratie, choreografie |
-| Gedistribueerd: binnen en over organisaties heen | |
-| Gebeurtenissen met en zonder gegevenswijzigingen in bronregistraties | |
-| Open en closed data  / Open en closed diensten | |
-| Beschrijven nut en noodzaak van gebeurtenisgedreven werken | Doel van en verwerking door afnemers |
-| Randvoorwaarden benoemen (juridisch, technisch, organisatorisch, beveiliging, …) | Randvoorwaarden invullen |
-| Informatie, o.a. beschrijving van diverse stijlen, patronen en protocollen| | 
-| Aanbevelingen, afspraken, (concept) standaarden | Technische architectuur, realisatie van voorzieningen  |
-| Notificatie gerelateerde functionaliteit voor vervolgopvraging bij informatiearm notificeren| Algemene functionaliteit voor vervolgopvraging bij  |informatiearm notificeren |
-
-Opmerking: de ontwikkelde berichtstandaard is mogelijk ook bruikbaar voor toepassingen die buiten de projectscope vallen.
+Gebeurtenissen doen zich in vele vormen en binnen vele contexten voor. Bij uitvoering van het project is bewust gekozen voor een afbakening van de scope om te voorkomen dat er teveel vraagstukken tegelijkertijd moeten worden opgelost. Een belangrijke afbakening is bijv. dat het project zich richt op geautomatiseerde notificatie tussen applicaties binnen de overheid en niet op notificeren van mensen of bedrijven. Mogelijk zijn veel projectresultaten ook bruikbaar voor zaken die buiten scope zijn geplaatst maar dit zal in vervolgprojecten moeten blijken. [Toelichting op de projectscope](./projectscope) 
 
 ## Architectuur
 
 Bij uitvoering van het project worden een aantal richtinggevende [architetuurprincipes](./architectuur/architectuurprincipes/README.md) gebruikt. 
 In lijn daarmee zijn een aantal [architectuur-aanbevelingen](./architectuur/aanbevelingen/README.md) gedaan.
  
-## Aanbevelingen
+## Besluiten en aanbevelingen
 
-Naast een berichtenstandaard worden aanbevelingen gedaan hoe de standaard effectief is te gebruiken en, meer algemeen, hoe gebeurtenisgedreven werken in de praktijk is vorm te geven: 
+Tijdens de uitvoering van het project zijn in overleg met de betrokken community en de werkgroep Berichtenstandaard verschillende soorten [besluiten](./besluiten) genomen. Vanuit teksten kan hiernaar worden verwezen als achtergrondinformatie en verantwoording van gemaakte keuzes. 
+Op basis van opgedane kennis, uitgevoerde beproevingen en plaatsgevonden discussies worden ook een aantal [aanbevelingen](./aanbevelingen) gedaan over gebeurtenisgedreven werken in het algemeen en gebruik van de notificatie berichtstandaard in het bijzonder. 
