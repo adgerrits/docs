@@ -51,25 +51,17 @@ Bij de uitvoering zijn betrokken:
 - uitvoeringsorganisaties (bijv. Logius)
 - marktpartijen.
 
-## Gebeurtenis, actoren en rollen
-
-Op business-niveau onderscheiden we:
-- **Gebeurtenis**: een plaatsgevonden voorval waarover informatie verstrekt wordt
-- **(Dienst)aanbieder**: een organisatie die informatie over opgetreden gebeurtenissen verstrekt
-- **(Notificatie)makelaar**: een  (eventueel aanwezige) organisatie die op basis van ontvangen informatie over gebeurtenissen notificaties aan geabonneerde afnemers verstrekt
-- **(Dienst)afnemer**: een organisatie aan wie notificaties worden verstrekt.
-
-Op applicatieniveau gebruiken we de CloudEvents terminologie en onderscheiden we:
-- **Event**: een gegevensrecord dat gegevens over een gebeurtenis en de context daarvan bevat
-- **Producer**: de applicatie die gebeurtenisinformatie verstrekt aan afnemers of een intermediair
-- **Intermediair**: een, of meerdere, applicatie(s) die een rol spelen bij het overbrengen van gebeurtenisinformatie naar afnemers in de vorm van (meestal push)notificaties
-- **Consumer**: een applicatie aan wie notificaties wordt verstrekt.
-
-In de praktijk kunnen organisaties en applicaties een of meerdere rollen vervullen.
-
 ## Scope
 
 Gebeurtenissen doen zich in vele vormen en binnen vele contexten voor. Bij uitvoering van het project is bewust gekozen voor een afbakening van de scope om te voorkomen dat er teveel vraagstukken tegelijkertijd moeten worden opgelost. Een belangrijke afbakening is bijv. dat het project zich richt op geautomatiseerde notificatie tussen applicaties binnen de overheid en niet op notificeren van mensen of bedrijven. Mogelijk zijn veel projectresultaten ook bruikbaar voor zaken die buiten scope zijn geplaatst maar dit zal in vervolgprojecten moeten blijken. [Toelichting op de projectscope](./projectscope) 
+
+## Terminologie 
+
+Om effectief te kunnen samenwerken zijn afspraken nodig over de te gebruiken terminologie zodat betrokken partijen elkaar goed begrijpen. Binnen het project is hier uitgebreid aandacht aan besteed. Voor communicatie met business-vertegenwoordigers over 'gebeurtenis gedreven' werken gebruiken we termen die binnen de overheid gebruikelijk zijn. Voor technische vraagstukken nemen we de terminologie over die wereldwijd wordt gebruikt wanneer het gaat om 'event driven' werken. 
+
+In lijn met de NORA kennen we een rol van 'dienstaanbieder' die gegevens over plaatsgevonden gebeurtenissen beschikbaar stelt en die, eventueel via een 'makelaar', in de vorm van 'notificaties' aan 'dienstafnemers' verstrekt. Aansluitend bij de CloudEvents terminlogie spreken we bij technische uitwerkingen over applicaties met de rol van 'producer' die, eventueel via een of meer 'intermediairies', 'events' verstrekken aan 'consumers'. 
+
+ [Toelichting op gebruikte terminologie](./terminologie) 
 
 ## Architectuur
 
