@@ -2,7 +2,7 @@
 
 ## Naam
 
-Multi-inzetbaar.
+Multi-inzetbaar
 
 ## Stelling
 
@@ -27,7 +27,5 @@ De NL-notificatiestandaard is te gebruiken met
 - een JSON berichtformaat en het HTTP protocol
 - een CSV berichtformaat en het FTP protocol.
 
-## Status
 
-Concept
 

@@ -2,7 +2,7 @@
 
 ## Naam
 
-Internationaal.
+Internationaal
 
 ## Stelling
 
@@ -26,7 +26,5 @@ Gewenste functionaliteit specifiek voor de Nederlandse overheid is niet zelfstan
 De op CloudEvents gebaseerde berichtstandaard gebruikt de Engelstalige terminologie van CloudEvents.
 Nieuwe verzoeken worden via 'issues' ingediend bij CloudEvents werkgroepen die standaarden ontwikkelen.
 
-## Status
 
-Concept
 

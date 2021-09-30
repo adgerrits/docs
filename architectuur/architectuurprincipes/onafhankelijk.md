@@ -27,7 +27,5 @@ De op CloudEvents gebaseerde berichtstandaard is te gebruiken met verschlillende
 - berichtformaten. Bijv. JSON en XML.
 - protocollen. Bijv. HTTP en AMQP. 
 
-## Status
 
-Concept
 

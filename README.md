@@ -1,39 +1,48 @@
 # Welkom bij Project Notificatieservices
 
-Project Notificatieservices heeft als doel om de wijze van notificeren binnen de Nederlandse overheid te standaardiseren. Een belangrijk onderdeel daarvan is het komen tot een gestandaardiseerd berichtformaat voor het uitwisselen van notificatieberichten tussen applicaties.
+Project Notificatieservices wil het mogelijk maken dat Nederlandse overheidsorganisaties vaker en beter gebeurtenisgedreven ('event driven') werken. Daarvoor is onder andere standaardisatie op een aantal nodig op een aantal aspecten. Project Notificatieservices richt zich primair op de ontwikkeling van een gestandaardiseerd berichtformaat voor geautomatiseerd uitwisselen van informatie over plaatsgevonden gebeurtenissen ('notificaties'). Er worden ook afspraken gemaakt aspecten zoals de interactie tussen betrokken applicaties (bijv. voor geautomatiseerd abonneren op notificaties) en er worden aanbevelingen gedaan over zaken waar in de praktijk rekening mee moet worden gehouden.  
 
-Meer algemeen geldt dat het project een eerste stap is op weg naar meer en beter gebeurtenisgedreven ('event driven') werken binnen overheidsorganisaties. Dit zal, vergelijkbaar als bij de Nederlandse API strategie, meerdere jaren vergen en samenwerking in de vorm van een community vergen. Reden waarom we nu al werken met een community waaraan zowel overheidsorganisaties als marktpartijen deelnemen.
+Het project een eerste stap is op weg naar meer en beter gebeurtenisgedreven werken binnen de overheid. Vergelijkbaar met hoe dit bij de Nederlandse API strategie verloopt zal dit meerdere jaren vergen en is samenwerking in de vorm van een community nodig. Als voorbereiding daarop wordt nu al samengewerkt met een community waarin zowel overheidsorganisaties als marktpartijen zijn vertegenwoordigd.
 
-Doe mee en [get started](./getting-started.md) !
+Doe mee en [ga aan de slag](./aan-de-slag.md) !
 
 ## Missie
 
+*Bijdragen aan effectief gebeurtenisgedreven kunnen werken binnen de overheid.*
+
 *Standaardiseren van het berichtformaat voor notificatieberichten.*
 
-*Maken van afspraken over en standaardiseren van aspecten van gebeurtenisgedreven werken.*
-
-*Ontwikkelen van effectief gebeurtenisgedreven werken binnen de overheid.*
-
+*Maken van afspraken over diverse aspecten van gebeurtenisgedreven werken.*
 
 ## Visie
 
-*Een overheid die gebeurtenisgedreven werkt en daarmee haar dienstverlening verbetert.*
-
+*Een overheid die waar nodig gebeurtenisgedreven werkt en daarmee haar dienstverlening verbetert.*
 
 ## Strategie
 
-We standaardiseren door maximaal gebruik te maken van wat internationaal op dit vlak gebeurt. 
+We sluiten zoveel mogelijk aan bij wat internationaal al op dit vlak is afgesproken en in ontwikkeling is. 
 
-We gebruiken de [CloudEvents](https://cloudevents.io/) berichtspecificatie ('A specification for describing event data in a common way') als uitgangspunt voor het gestandaardiseerde berichtformaat voor notificaties. We maken aanvullend afspraken over hoe we de CloudEvents berichtstandaard binnen onze context toepassen in de [NLD-CloudEvents berichtstandaard](./NLD-CloudEvents-berichtstandaard.md). 
+We gebruiken de [CloudEvents](https://cloudevents.io/) berichtspecificatie ('A specification for describing event data in a common way') als uitgangspunt voor het gestandaardiseerde berichtformaat voor notificaties. We maken aanvullend afspraken over hoe we de CloudEvents berichtstandaard binnen onze overheidscontext toepassen. De resultaten hiervan zijn gebundeld op de pagina: [Berichtstandaard voor notificeren binnen de overheid](./berichtstandaard.md). 
 
-Omdat alleen specificatie van een berichtformaat onvoldoend is om in de praktijk effectief gebeurtenisgedreven te kunnen werken maken we gebruik van:
-- de CloudEvents specificatie voor gebruik van de berichtstandaard met verschillende formaten (bijv. JSON) en protocollen (bijv. HTTP)
-- de CloudEvents specificatie voor abonneren op en filteren van gebeurtenissen
-- de CloudEvents specificatie voor het ('push')patroon waarbij notificaties op initiatief van een aanbieder worden verstrekt aan geabonneerde afnemers
-- de CloudEvents specificatie voor publiceren en raadplegen van informatie over onderscheiden gebeurtenissen
-- de AsyncAPI specificatie voor documenteren van API's bij gebruik van het Publish-Subcribe patroon.
+Voor het maken van afspraken over hoe we in de praktijk gebeurtenisgedreven werken maken we gebruik van bestaande specificaties en beschrijven we hoe we die binnen onze context toepassen. In gevallen waarbij afsrpaken worden gemaakt over hoe de interactie tussen actoren verloopt gebruiken we ook wel over een 'patroon'. 
+
+| Specificaties 	| Toepassing |
+|---|---|
+| CloudEvents specificatie voor berichten met gebeurtenisinformatie | [Berichtformaat voor notificaties](./notificatie-berichtformaat)|
+| CloudEvents specificaties voor gebruik van de berichtstandaard met verschillende formaten (bijv. JSON) en protocollen (bijv. HTTP) | [Formaten en protocollen](./formaten-en-protocollen)|
+| CloudEvents specificaties voor abonneren op notificaties en het kunnen filteren daarvan | [Abonneren en filteren](./abonneren-en-filteren)|
+| CloudEvents specificatie voor het ('push')patroon waarbij notificaties op initiatief van een aanbieder worden verstrekt aan geabonneerde afnemers ||
+| CloudEvents specificatie voor publiceren van informatie over beschikbare soorten gebeurtenissen | [Publiceren soorten gebeurtenissen](./publiceren-gebeurtenistypes) |
+| AsyncAPI specificatie voor documenteren van API's bij gebruik van het Publish-Subcribe patroon | [async-api-gebruik](./asyncapi-gebruik)|
+| Open standaarden zoals benoemd door het Forum Standaardisatie| [Open standaarden](./open-standaarden)|
 
 We gebruiken bovenstaande specificaties om een aantal aanbevelingen te doen. Op termijn kunnen ze onderdeel worden van de familiie van standaarden voor gebeurtenisgedreven werken binnen de Nederlandse overheid.   
+
+## Status van de berichtstandaard
+
+De berichtstandaard voor notificaties is in ontwikkeling. Momenteel heeft de standaard nog geen formele status. 
+De planning is dat de standaard medio 2022 de status van Release Candidate krijgt. Dit houdt in dat er een 1.0 versie van de standaard is die in principe klaar is en geimplementeerd kan worden. Partijen die de berichtstandaard implementeren  kunnen gedurende de Release Candidate fase hun bevindingen terugkoppelen naar het project. Deze bevindingen kunnen leiden tot een nieuwe Release Candidate, of worden meegenomen in de definitieve 1.0 versie van de standaard. 
+Op de [voortgangspagina](/docs/_content/achtergronddocumentatie/voortgang.md) wordt bijgehouden welke wijzigingen in de berichtstandaard zijn aangebracht.
 
 ## Projectorganisatie
 
@@ -43,7 +52,6 @@ Bij de uitvoering zijn betrokken:
 - bestuursorganen (bijv. gemeenten)
 - uitvoeringsorganisaties (bijv. Logius)
 - marktpartijen.
-
 
 ## Gebeurtenis, actoren en rollen
 
@@ -63,28 +71,30 @@ In de praktijk kunnen organisaties en applicaties een of meerdere rollen vervull
 
 ## Scope
 
-Gebeurtenissen doen zich in vele vormen en binnen vele contexten voor. Hoewel de berichtenstandaard in vele situaties toepasbaar is bij uitvoering van het project de scope afgebakend als:
+Gebeurtenissen doen zich in vele vormen en binnen vele contexten voor. Bij het ontwikkelen van de berichtenstandaard is de volgende scopeafbakening gehanteerd:
 
+| Binnen scope 	| Buiten scope |
+| --- | --- |
+| Van overheid naar overheid (G2G) | Notificeren van mensen (G2C), bedrijven (G2B, B2B) |
+| Notificeren door en van applicaties (M2M) | Notificeren bij microservices , serverless functies, Internet of Things  |
+| 1 op N notificeren | 1 op 1 notificeren |
+| 1-weg communicatie - Fire and forget | 2-weg communicatie Procesorkestratie, choreografie |
+| Gedistribueerd: binnen en over organisaties heen | |
+| Gebeurtenissen met en zonder gegevenswijzigingen in bronregistraties | |
+| Open en closed data  / Open en closed diensten | |
+| Beschrijven nut en noodzaak van gebeurtenisgedreven werken | Doel van en verwerking door afnemers |
+| Randvoorwaarden benoemen (juridisch, technisch, organisatorisch, beveiliging, …) | Randvoorwaarden invullen |
+| Informatie, o.a. beschrijving van diverse stijlen, patronen en protocollen| | 
+| Aanbevelingen, afspraken, (concept) standaarden | Technische architectuur, realisatie van voorzieningen  |
+| Notificatie gerelateerde functionaliteit voor vervolgopvraging bij informatiearm notificeren| Algemene functionaliteit voor vervolgopvraging bij  |informatiearm notificeren |
 
-
+Opmerking: de ontwikkelde berichtstandaard is mogelijk ook bruikbaar voor toepassingen die buiten de projectscope vallen.
 
 ## Architectuur
 
-Tijdens uitvoering van het project zijn een aantal leidende architetuurprincipes vastgesteld en zijn in lijn daarmee een aantal keuzes gemaakt waaronder keuzes om op een bepaalde manier gebruik te maken van de binnen de CloudEvents berichtenstandaard opgenomen berichtattributen. 
-
-- **Architectuur Principes**: een verzameling vastgestelde [principes](./architectuur_principes/README.md).   [pr](.\architectuur_principes\README.md)   
-- **Architecture Decision Log**: a collection of agreed-upon [beslissingen](./architectuur_beslissingen/README.md).
-
-[beslissingen](./1.md)
-
-Solution architecturen voor gebruik van de standaard vallen buiten de scope van het project. Deze moeten worden bepaald tijdens projecten waarbij notificeren een rol speelt zodanig dat de standaard optimaal passend binnen de context is toe te passen. 
+Bij uitvoering van het project worden een aantal richtinggevende [architetuurprincipes](./architectuur/architectuurprincipes/README.md) gebruikt. 
+In lijn daarmee zijn een aantal [architectuur-aanbevelingen](./architectuur/aanbevelingen/README.md) gedaan.
  
 ## Aanbevelingen
 
 Naast een berichtenstandaard worden aanbevelingen gedaan hoe de standaard effectief is te gebruiken en, meer algemeen, hoe gebeurtenisgedreven werken in de praktijk is vorm te geven: 
-
-- [Applying natural language](./guidelines/language.md)
-- [Adding references](./guidelines/references.md)
-- [Developing](./guidelines/development.md)
-- [Testing](./guidelines/testing.md)
-- [Versioning](./guidelines/versioning.md)

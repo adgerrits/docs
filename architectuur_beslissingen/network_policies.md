@@ -1,3 +1,0 @@
-# Network policies
-
-Todo

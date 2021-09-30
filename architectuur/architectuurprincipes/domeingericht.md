@@ -2,7 +2,7 @@
 
 ## Naam
 
-Domeingericht.
+Domeingericht
 
 ## Stelling
 
@@ -27,6 +27,3 @@ Domeinexperts bepalen welke inhoudelijke informatie ('payload') via notificaties
 Het standaard berichtattribuut 'type' wordt met behulp van een afgesproken formaat gevuld met door domeinexperts bepaalde gegevens die beschrijven om wat voor gebeurtenis het betreft.
 Door domeinexperts benoemde extension-attributen worden met behulp van een afgesproken formaat gelabeld zodat duidelijk is welk domein het betreft. Domeinexperts bepalen Welke atttributen met welke inhoud worden opgenomen.  
 
-## Status
-
-Concept
